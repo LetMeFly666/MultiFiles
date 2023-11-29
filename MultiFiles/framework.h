@@ -6,18 +6,24 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <string>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 extern "C" __declspec(dllexport) class MultiFilesMerger {
 public:
 	/* 将toGenFiles中的所有文件压缩合并到toGenFileName中 */
-	void __declspec(dllexport) merge(vector<string>& toGenFiles, string toGenFileName = "merged.tffs", string infoFileName = "merged-info.json");
+	void __declspec(dllexport) merge(vector<string>& toGenFiles, string toGenFileName, string infoFileName);
 };
 
 extern "C" __declspec(dllexport) class MultiFilesReader {
+private:
+	string mergedFileName;
+	string infoFileName;
+	unordered_map<string, string> file2data;
 public:
-	__declspec(dllexport) MultiFilesReader(string mergedFileName = "merged.ttfs", string infoFileName = "merged-info.json");
+	__declspec(dllexport) MultiFilesReader(string mergedFileName, string infoFileName);
 	/* 读取一个小文件 */
 	string __declspec(dllexport) read(string toReadFileName);
 };
