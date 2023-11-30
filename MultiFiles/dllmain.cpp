@@ -49,8 +49,8 @@ MultiFilesReader::MultiFilesReader(string mergedFileName, string infoFileName) :
         int beginLoc = atoll(beginLocString.c_str());  // 忽然发现这个似乎不需要，顺序读就行了
         string lengthString = thisLine.substr(lastSplitLoc + 1, thisLine.size() - lastSplitLoc - 1);
         int length = atoll(lengthString.c_str());
-        char *dataChar = new char[length];
-        istrInfo.read(dataChar, length);
+        char *dataChar = new char[length + 1];
+        istrTFFS.read(dataChar, length);
         string data(dataChar);
         delete[] dataChar;
         file2data[thisFileName] = data;
