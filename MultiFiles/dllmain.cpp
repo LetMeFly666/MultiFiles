@@ -17,7 +17,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     return TRUE;
 }
 
-void MultiFilesMerger::merge(vector<string>& toGenFiles, string toGenFileName = "merged.tffs", string infoFileName = "merged-info.json") {
+void MultiFilesMerger::merge(vector<string>& toGenFiles, string toGenFileName, string infoFileName) {
     int totalBytes = 0;
     ofstream ostrTFFS(toGenFileName, ios::out | ios::binary);
     ofstream ostrInfo(infoFileName, ios::out);
@@ -34,7 +34,7 @@ void MultiFilesMerger::merge(vector<string>& toGenFiles, string toGenFileName = 
     ostrInfo.close();
 }
 
-MultiFilesReader::MultiFilesReader(string mergedFileName = "merged.ttfs", string infoFileName = "merged-info.json") : mergedFileName(mergedFileName), infoFileName(infoFileName) {
+MultiFilesReader::MultiFilesReader(string mergedFileName, string infoFileName) : mergedFileName(mergedFileName), infoFileName(infoFileName) {
     ifstream istrTFFS(mergedFileName, ios::in | ios::binary);
     ifstream istrInfo(infoFileName, ios::in);
     string thisLine;
