@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>MultiFIles_MergerByPy</Name>
     <RootNamespace>MultiFIles_MergerByPy</RootNamespace>
+    <InterpreterId>Global|VisualStudio|Python</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="mergerMain.py" />
+    <Compile Include="MultiFiles.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|VisualStudio|Python" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
