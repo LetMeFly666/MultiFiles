@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiFiles", "MultiFiles.vcxproj", "{21D1C74E-566A-4075-9145-B17F336AA96D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiFiles_MergerByCPP", "..\MultiFiles_MergerByCPP\MultiFiles_MergerByCPP.vcxproj", "{6604B621-F9D8-4AFE-982F-81813A7A6DB7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{21D1C74E-566A-4075-9145-B17F336AA96D} = {21D1C74E-566A-4075-9145-B17F336AA96D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
