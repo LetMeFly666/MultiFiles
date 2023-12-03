@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2023-11-29 22:49:31
  * @LastEditors: LetMeFly
- * @LastEditTime: 2023-11-30 16:44:47
+ * @LastEditTime: 2023-12-03 16:42:51
 -->
 # MultiFiles
 
@@ -13,6 +13,8 @@
 **读取小文件：** 在需要读取文件时，调用MultiFiles库，避免了多次大量的IO操作。
 
 ## 使用方法
+
+VisualStudio项目解决方案在```MultiFiles/MultiFiles.sln```。启动后将```MultiFiles_MergerByCPP```设置为启动项目，编译运行即可（第一次编译运行可能会失败，因为要先生成.dll和.lib文件，失败了就再编译一次就能成功了）。
 
 **合并小文件：** 调用```MultiFiles.dll```的```MultiFilesMerger```类的```merge```方法。
 
